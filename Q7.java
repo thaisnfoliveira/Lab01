@@ -5,13 +5,14 @@
  */
 
 import java.util.Scanner;
+import java.lang.Math;
 
-public class Q7{
+public class Main{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int maior = 0;
         int menor = 1000;
-        float media = 0;
+        int media = 0;
         String notas = "";
 
         while (true){
@@ -20,22 +21,23 @@ public class Q7{
                 break;
             }
             if (Integer.parseInt(infor[1]) > maior) {
-                maior = infor[1];
+                maior = Integer.parseInt(infor[1]);
             }
-            if (Integer.parseInt(infor1]) < menor) {
-                menor = infor[1];
+            if (Integer.parseInt(infor[1]) < menor) {
+                menor = Integer.parseInt(infor[1]);
             }
-            media = media + parseInt(infor[1]);
+            media = media + Integer.parseInt(infor[1]);
             notas = notas + Integer.parseInt(infor[1]) + " ";
         }
 
-        String lista = notas.split(" ");
-        media = media/lista.length();
+        String[] lista = notas.split(" ");
+        int tamanho = lista.length;
+        media = media/tamanho;
         int acima = 0;
         int abaixo = 0;
 
-        for (int i = 0; i<lista.length(); i++){
-            if (lista[i] >= 700){
+        for (int i = 0; i<tamanho; i++){
+            if (Integer.parseInt(lista[i]) >= 700){
                 acima ++;
             } else{
                 abaixo ++;
@@ -44,7 +46,7 @@ public class Q7{
 
         System.out.println("maior: "+maior);
         System.out.println("menor: "+menor);
-        System.out.println("media: "+Integer.parseInt(media));
+        System.out.println("media: "+media);
         System.out.println("acima: "+acima);
         System.out.println("abaixo: "+abaixo);
     }
