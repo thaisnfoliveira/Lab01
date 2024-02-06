@@ -10,7 +10,7 @@ public class Q6{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        while (True){
+        while (true){
             String nome = "";
             String[] lista = sc.nextLine().split(" ");
             if (lista[0].equals("wally")){
@@ -21,9 +21,12 @@ public class Q6{
                     nome = lista[i];
                 }
             }
+            if (nome.equals("")) {
+                System.out.println("?");
+            }
+            else{
             System.out.println(nome);
-
-
+            }
         }
     }
 }
